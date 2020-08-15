@@ -6,7 +6,7 @@
    <div class="container">
        <head>
          
-         <link rel="stylesheet" href="{{ secure_asset('css/main.css') }}">
+         <link rel="stylesheet" href="{{ secure_asset('css/add.css') }}">
          
       </head>
       
@@ -52,10 +52,10 @@
        
        <div class="bottom-btn">
          <div class="a">
-           <button type="button">戻る</button>
+           <botton type="button">戻る</botton>
          </div>
          <div class="b">
-           <button type="button">登録</button>
+           <botton type="button">登録</botton>
          </div>
        </div>
        

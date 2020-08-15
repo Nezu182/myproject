@@ -7,7 +7,7 @@
       
       <head>
          
-         <link rel="stylesheet" href="{{ secure_asset('css/parts.css') }}">
+         <link rel="stylesheet" href="{{ secure_asset('css/home.css') }}">
          
       </head>
       
@@ -52,11 +52,11 @@
        </div>
        
        <div class="bottom-btn">
-         <div class="a" type="button">
-           過去の記録
+         <div class="a">
+           <botton type="button">過去の記録</botton>
          </div>
-         <div class="b" type="button">
-           編集
+         <div class="b">
+           <botton type="botton">編集</botton>
          </div>
        </div>
        

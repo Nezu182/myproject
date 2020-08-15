@@ -23,40 +23,40 @@
        <div class="content">
           <dl>
              <dt>カロリー</dt>
-             <dd>　○○　g</dd>
+             <dd><input type="number" name="num01" min="-0.9" max="9999.9" step="0.1"/>  g</dd>
           </dl>
        </div>
        <div class="content">
           <dl>
              <dt>脂質</dt>
-             <dd>　○○　g</dd>
+             <dd><input type="number" name="num01" min="-0.9" max="999.9" step="0.1"/>  g</dd>
           </dl>
        </div>  
        <div class="content">
           <dl>
              <dt>糖質</dt>
-             <dd>　○○　g</dd>
+             <dd><input type="number" name="num01" min="-0.9" max="999.9" step="0.1"/>  g</dd>
           </dl>
        </div>
        <div class="content">
           <dl>
              <dt>炭水化物</dt>
-             <dd>　○○　g</dd>
+             <dd><input type="number" name="num01" min="-0.9" max="999.9" step="0.1"/>  g</dd>
           </dl>
        </div>
        <div class="content">
           <dl>
              <dt>タンパク質</dt>
-             <dd>　○○　g</dd>
+             <dd><input type="number" name="num01" min="-0.9" max="999.9" step="0.1"/>  g</dd>
           </dl>
        </div>
        
        <div class="bottom-btn">
          <div class="a">
-           <button type="button">戻る</button>
+           <botton type="button">戻る</botton>
          </div>
          <div class="b">
-           <button type="button">登録</button>
+           <botton type="button">登録</botton>
          </div>
        </div>
        
