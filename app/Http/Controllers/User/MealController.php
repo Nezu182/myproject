@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
+use App\Services\CalendarService;
 use App\Http\Controllers\Controller;
 
 class MealController extends Controller
@@ -27,10 +28,6 @@ class MealController extends Controller
         return view('user.add');
     }
     
-    public function calendar()
-    {
-        return view('user.calendar');
-    }
     
     public function date()
     {

@@ -3,18 +3,38 @@
 @section('title', 'Body Makeup Balance')
 
 @section('content')
-   <?php
-    require 'vendor/autoload.php';
-    use Carbon\Carbon;
-    
-    $dt = Carbon::createFromDate();
-    renderCalendar($dt);
-    
-    function renderCalendar($dt)
-    {
-        $dt->timezone = 'Asia/Tokyo';
-        echo $dt;
-    }
-    
-    ?>
+   <head>
+         
+         <link rel="stylesheet" href="{{ secure_asset('css/calendar.css') }}">
+         
+   </head>
+   
+   <div class="flex-center position-ref full-height">
+       <div class="content">
+           
+           <div>
+               <a href="?ym={{ $prev }}">&lt;</a>
+               <span calss="month">{{ $month }}</span>
+               <a href="?ym={{ $next }}">&gt;</a>
+           </div>
+           
+           <table>
+               <tr>
+                   <th>日</th>
+                   <th>月</th>
+                   <th>火</th>
+                   <th>水</th>
+                   <th>木</th>
+                   <th>金</th>
+                   <th>土</th>
+               </tr>
+               @foreach ($weeks as $week)
+                  {!! $week !!}
+               @endforeach
+           </table>
+           
+       </div>
+       {{-- .content --}}
+   </div>
+   {{-- .flex-center .position-ref .full-height --}}
 @endsection

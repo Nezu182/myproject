@@ -26,11 +26,11 @@
         
         <div class="bottom-btn">
             <div class="a">
-               <button type="button">アカウント登録</button>
+               <botton type="button">アカウント登録</botton>
             </div>
-        </div>
+        
             <div class="b">
-               <button type="button">ログイン</button>
+               <botton type="button">ログイン</botton>
             </div>
         </div>
         
