@@ -12,18 +12,18 @@ class CalendarService
         $week = '';
         
         $dt = new Carbon(self::getYm_firstday());
-        $day_of_month = $dt->dayOfWeek;
+        $day_of_week = $dt->dayOfWeek;
         $days_in_month = $dt->daysInMonth;
         $week .= str_repeat('<td></td>', $day_of_week);
         
         for ($day = 1; $day <= $days_in_month; $day++, $day_of_week++) {
             $date = self::getYm() . '-' . $day;
             if (Carbon::now()->format('Y-m-j') === $date) {
-                $week .= '<td class="today">' . $day;
+                $week .= '<td class="today"><a href="date?selectedDate=' .$date . '">'. $day;
             } else {
-                $week .= '<td>' . $day;
+                $week .= '<td class="another_day"><a href="date?selectedDate=' .$date . '">'. $day;
             }
-            $week .= '</td>';
+            $week .= '</a></td>';
             
             if (($day_of_week % 7 === 6) || ($day === $days_in_month)) {
                 if ($day === $days_in_month) {

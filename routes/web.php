@@ -20,7 +20,7 @@ Route::group(['prefix' => 'user'], function() {
     Route::get('table', 'User\MealController@table');
     Route::get('edit', 'User\MealController@edit');
     Route::get('add', 'User\MealController@add');
-    Route::get('calendar', 'User\CalendarController@calendar')->name('calendar');
+    Route::get('calendar', 'CalendarController@calendar')->name('calendar');
     Route::get('date', 'User\MealController@date');
 });
 Auth::routes();
