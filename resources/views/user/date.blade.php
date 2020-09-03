@@ -19,36 +19,17 @@
            <span>栄養素</span>
        </div>
        
-       <div class="content">
-          <dl>
-             <dt>カロリー</dt>
-             <dd>　○○　g</dd>
-          </dl>
-       </div>
-       <div class="content">
-          <dl>
-             <dt>脂質</dt>
-             <dd>　○○　g</dd>
-          </dl>
-       </div>  
-       <div class="content">
-          <dl>
-             <dt>糖質</dt>
-             <dd>　○○　g</dd>
-          </dl>
-       </div>
-       <div class="content">
-          <dl>
-             <dt>炭水化物</dt>
-             <dd>　○○　g</dd>
-          </dl>
-       </div>
-       <div class="content">
-          <dl>
-             <dt>タンパク質</dt>
-             <dd>　○○　g</dd>
-          </dl>
-       </div>
+       <table class="teble teble-bark">
+         <thead>
+           <tr>
+             <th width="20%">カロリー</th>
+             <th width="20%">脂質</th>
+             <th width="20%">糖質</th>
+             <th width="20%">炭水貨物</th>
+             <th width="20%">タンパク質</th>
+           </tr>
+         </thead>
+       </table>
        
        <div class="bottom-btn">
          <div class="a">
