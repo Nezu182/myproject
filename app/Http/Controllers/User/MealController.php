@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Services\CalendarService;
 use App\Http\Controllers\Controller;
 
-use App\Meals; 
+use App\Meal; 
 
 class MealController extends Controller
 {
@@ -27,9 +27,9 @@ class MealController extends Controller
     
     public function add(Request $request)
     {
-        $this->validate($request, Meals::$rules);
+        $this->validate($request, Meal::$rules);
         
-        $meal = new Meals;
+        $meal = new Meal;
         $form = $request->all();
         
         unset($form['_token']);
