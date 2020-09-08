@@ -10,7 +10,7 @@
          
       </head>
       
-      <form action="{{ action('User\MealController@add') }}" method="post" enctype="multipart/form-data">
+      <form action="{{ action('User\MealController@create') }}" method="post" enctype="multipart/form-data">
        
       
          
@@ -57,7 +57,7 @@
            <botton type="button">戻る</botton>
          </div>
          <div class="b">
-           <input type="button" class="btn btn-primary" value="登録">
+           <input type="button"  value="登録">
          </div>
        </div>
        <input type="hidden" name="meal_date" value="20200830">

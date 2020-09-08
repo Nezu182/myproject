@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Meal extends Model
+class History extends Model
 {
     protected $guarded = array('id');
     
@@ -15,9 +15,4 @@ class Meal extends Model
         'tanpakusitu' => 'required',
         'tousitu' => 'required',
     );
-    
-    public function histories()
-    {
-        return $this->hasMany('App\History');
-    }
 }

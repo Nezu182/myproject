@@ -17,11 +17,12 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'user'], function() {
     Route::get('home', 'User\MealController@home');
-    Route::get('table', 'User\MealController@table');
+    Route::get('meal_hibetsu', 'User\MealController@meal_hibetsu');
     Route::get('edit', 'User\MealController@edit');
     Route::get('add', 'User\MealController@add');
     Route::get('calendar', 'CalendarController@calendar')->name('calendar');
     Route::get('date', 'User\MealController@date');
+    Route::post('create', 'User\MealController@create');
 });
 Auth::routes();
 
