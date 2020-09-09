@@ -19,10 +19,10 @@ Route::group(['prefix' => 'user'], function() {
     Route::get('home', 'User\MealController@home');
     Route::get('meal_hibetsu', 'User\MealController@meal_hibetsu');
     Route::get('edit', 'User\MealController@edit');
-    Route::get('add', 'User\MealController@add');
+    Route::get('add', 'User\MealController@add')->middleware('auth');
+    Route::post('add', 'User\MealController@create')->middleware('auth');
     Route::get('calendar', 'CalendarController@calendar')->name('calendar');
     Route::get('date', 'User\MealController@date');
-    Route::post('create', 'User\MealController@create');
 });
 Auth::routes();
 
