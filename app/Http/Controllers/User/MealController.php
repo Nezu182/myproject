@@ -60,10 +60,6 @@ class MealController extends Controller
     
     public function create(Request $request)
     {
-        $meal_date = date_create($request->date);
-        $meal_date = date_format($date , 'Y-m-d');
-        $obj = Meal::where('created_at' , 'like' , $meal_date . '%')->get();
-        
         $this->validate($request, Meal::$rules);
         
         $meal = new Meal;

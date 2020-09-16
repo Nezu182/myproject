@@ -9,6 +9,7 @@ class Meal extends Model
     protected $guarded = array('id');
     
     public static $rules = array(
+        'meal_date => required',
         'kcal' => 'required',
         'tansuikabutu' => 'required',
         'sisitu' => 'required',
