@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\User;
 
+
+
 use Illuminate\Http\Request;
 use App\Services\CalendarService;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Meal; 
+
+
 
 class MealController extends Controller
 {
@@ -15,24 +19,33 @@ class MealController extends Controller
         return view('user.home');
     }
     
-    public function meal_hibetsu()
+    public function meal_hibetsu(Request $request)
     {
         // ミールテーブルからデータを取得するためにミールモデルをNEWする
-        $meal = new Meal;
+        //$meal = new Meal;
         
         // ログインしているユーザーのユーザーIDを取得する
-        $user_id = Auth::id();
-        dd($user_id);
+        //$user_id = Auth::id();
+        //dd($user_id);
         
-        $meal->kcal = $kcal;
-        $meal->tansuikabutu = $tansuikabutu;
-        $meal->sisitu = $sisitu;
-        $meal->tanpakusitu = $tanpakusitu;
-        $meal->tousitu = $tousitu;
-        $meal->meal_date = Carbon::now();
-        $meal->save();
+        //$meal->kcal = $kcal;
+        //$meal->tansuikabutu = $tansuikabutu;
+        //$meal->sisitu = $sisitu;
+        //$meal->tanpakusitu = $tanpakusitu;
+        //$meal->tousitu = $tousitu;
+        //$meal->meal_date = Carbon::now();
+        //$meal->save();
         
-        return view('user.meal_hibetsu');
+      $meal_date = $request->selectedDate;
+      if ($meal_date != '') {
+          
+          $posts = Meal::where('meal_date', $meal_date)->get();
+      } else {
+          
+          $posts = Meal::all();
+      }
+        
+        return view('user.meal_hibetsu',['posts' => $posts, 'meal_date' => $meal_date]);
     }
     
     public function edit()
@@ -42,12 +55,15 @@ class MealController extends Controller
     
     public function add(Request $request)
     {
-        
         return view('user.add');
     }
     
     public function create(Request $request)
     {
+        $meal_date = date_create($request->date);
+        $meal_date = date_format($date , 'Y-m-d');
+        $obj = Meal::where('created_at' , 'like' , $meal_date . '%')->get();
+        
         $this->validate($request, Meal::$rules);
         
         $meal = new Meal;

@@ -12,6 +12,15 @@
       
       <form action="{{ action('User\MealController@create') }}" method="post" enctype="multipart/form-data">
        
+      <div class="date">
+       <p>
+          <?php
+            $meal_date = new DateTime('now');
+            echo $meal_date->format('n月j日');
+          ?>
+       </p>
+      </div>
+       
       @if (count($errors) > 0)
           <ul>
               @foreach($errors->all() as $e)

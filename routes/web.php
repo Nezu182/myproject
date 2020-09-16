@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'user'], function() {
     Route::get('home', 'User\MealController@home');
-    Route::get('meal_hibetsu', 'User\MealController@meal_hibetsu');
+    Route::get('meal_hibetsu', 'User\MealController@meal_hibetsu')->middleware('auth');
     Route::get('edit', 'User\MealController@edit');
     Route::get('add', 'User\MealController@add')->middleware('auth');
     Route::post('add', 'User\MealController@create')->middleware('auth');
