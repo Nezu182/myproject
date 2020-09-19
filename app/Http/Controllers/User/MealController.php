@@ -60,6 +60,11 @@ class MealController extends Controller
     
     public function create(Request $request)
     {
+        $meal_data=array("created_at"=>'2020-09-19',"updated_at"=>'2020-09-19');
+        DB::table('meals')->insert($meal_data);
+        echo "Record inserted successfully.<br/>";
+        return redirect('/');
+        
         $this->validate($request, Meal::$rules);
         
         $meal = new Meal;
