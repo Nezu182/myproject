@@ -72,7 +72,9 @@
            <botton type="button">戻る</botton>
          </div>
          <div class="b">
-           <input type="button"  value="登録">
+          <botton type="button">
+           <input href="{{ action('User\MealController@meal_hibetsu') }}" role="button" type="submit"  value="登録">
+          </botton>
          </div>
        </div>
        <input type="hidden" name="meal_date" value="20200830">

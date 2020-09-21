@@ -26,6 +26,6 @@ Route::group(['prefix' => 'user'], function() {
 });
 Auth::routes();
 
-Route::get('top', 'User\MealController@top');
+Route::get('home', 'User\MealController@top');
 
 

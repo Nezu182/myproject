@@ -60,10 +60,9 @@ class MealController extends Controller
     
     public function create(Request $request)
     {
-        $meal_data=array("created_at"=>'2020-09-19',"updated_at"=>'2020-09-19');
-        DB::table('meals')->insert($meal_data);
-        echo "Record inserted successfully.<br/>";
-        return redirect('/');
+        $meal_date = date_create($request->date);
+        $meal_date = date_format($meal_date , 'Y-m-d');
+        $obj = Meal::where('created_at' , 'like' , $meal_date . '%')->get();
         
         $this->validate($request, Meal::$rules);
         
@@ -73,9 +72,10 @@ class MealController extends Controller
         unset($form['_token']);
         
         $meal->fill($form);
+        $meal->user_id = Auth::id();
         $meal->save();
         
-        return view('user.meal_hibetsu');
+        return redirect('user/meal_hibetsu');
     }
     
     public function date(Request $request)

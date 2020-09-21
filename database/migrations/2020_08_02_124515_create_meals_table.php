@@ -16,7 +16,7 @@ class CreateMealsTable extends Migration
         Schema::create('meals', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('user_id');
-            $table->string('meal_date');
+            $table->datetime('meal_date');
             $table->string('meal_time');
             $table->decimal('kcal', 4, 1);
             $table->decimal('tansuikabutu', 3, 1);
