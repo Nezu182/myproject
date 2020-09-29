@@ -14,9 +14,23 @@ use App\Meal;
 
 class MealController extends Controller
 {
-    public function home()
+    public function home(Request $request)
     {
-        return view('user.home');
+        $meal_date = date_create($request->date);
+        $meal_date = date_format($meal_date , 'Y-m-d');
+        //dd($meal_date);
+        $meals = Meal::where('created_at' , 'like' , "%2020-09-27%" )->get();
+        
+        // $meals = Meal::where('user_id', 1)
+        //     ->get()
+        //     ->groupBy(function ($row) {
+        //         return $row->name;
+        //     })
+        //     ->map(function ($value) {
+        //         return $value->sum('kcal', 'tansuikabutu', 'sisitu', 'tanpakusitu','tousitu');
+        //     });
+           
+        return view('user.home',  compact('meals', 'meal_date'));
     }
     
     public function meal_hibetsu(Request $request)
@@ -36,6 +50,10 @@ class MealController extends Controller
         //$meal->meal_date = Carbon::now();
         //$meal->save();
         
+      $meal_date = date_create($request->date);
+      $meal_date = date_format($meal_date , 'Y-m-d');
+      $obj = Meal::where('created_at' , 'like' , $meal_date . '%')->get();
+
       $meal_date = $request->selectedDate;
       if ($meal_date != '') {
           
@@ -45,7 +63,7 @@ class MealController extends Controller
           $posts = Meal::all();
       }
         
-        return view('user.meal_hibetsu',['posts' => $posts, 'meal_date' => $meal_date]);
+        return view('user/meal_hibetsu?selectedDate=',['posts' => $posts, 'meal_date' => $meal_date]);
     }
     
     public function edit()
@@ -55,7 +73,9 @@ class MealController extends Controller
     
     public function add(Request $request)
     {
-        return view('user.add');
+        $selectedDate = $request->selectedDate;
+        
+        return view('user.add', ['selectedDate' => $selectedDate]);
     }
     
     public function create(Request $request)
@@ -75,7 +95,7 @@ class MealController extends Controller
         $meal->user_id = Auth::id();
         $meal->save();
         
-        return redirect('user/meal_hibetsu');
+        return redirect('user/meal_hibetsu?selectedDate='. $meal_date);
     }
     
     public function date(Request $request)
@@ -92,6 +112,13 @@ class MealController extends Controller
     public function top()
     {
         return view('layouts.top');
+    }
+    
+    public function delete (Request $request)
+    {
+        $meal_date = Meal::find($request->id);
+        $meal_date->delete();
+        return redirect ('user/meal_hibetsu');
     }
     
     

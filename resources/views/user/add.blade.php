@@ -15,7 +15,7 @@
       <div class="date">
        <p>
           <?php
-            $meal_date = new DateTime('now');
+            $meal_date = DateTime::createFromFormat('Y-m-d', $selectedDate);
             echo $meal_date->format('n月j日');
           ?>
        </p>
@@ -73,11 +73,11 @@
          </div>
          <div class="b">
           <botton type="button">
-           <input href="{{ action('User\MealController@meal_hibetsu') }}" role="button" type="submit"  value="登録">
+           <input  role="button" type="submit"  value="登録">
           </botton>
          </div>
        </div>
-       <input type="hidden" name="meal_date" value="20200830">
+       <input type="hidden" name="meal_date" value="{{ $selectedDate }}">
        <input type="hidden" name="meal_time" value="1">
        {{ csrf_field() }}
       </form>

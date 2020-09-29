@@ -10,13 +10,17 @@
          <link rel="stylesheet" href="{{ secure_asset('css/meal_hibetsu.css') }}">
          
       </head>
+      
+      <form action="{{ action('User\MealController@create') }}" method="post" enctype="multipart/form-data">
        
        <div class="row1">
            <div class="col-md-8 mx-auto">
                <h2>日別食事一覧画面</h2>
            </div>
            <div class="da">
-               
+               <p>
+                 
+               </p>
            </div>
        </div>
        
@@ -30,6 +34,8 @@
                 <th width="21.5%">糖質</th>
                 <th width="21.5%">炭水化物</th>
                 <th width="21.5%">タンパク質</th>
+                <th width="21.5%"></th>
+                <th width="21.5%"></th>
              </tr>
           </thead>
           <tbody>
@@ -41,11 +47,19 @@
                     <td>{{ \Str::limit($meal->tousitu,5) }}</td>
                     <td>{{ \Str::limit($meal->tansuikabutu,5) }}</td>
                     <td>{{ \Str::limit($meal->tanpakusitu,5) }}</td>
-                    <td>33</td>
+                    <td>
+                        <a href="{{ action('User\MealController@delete', ['id => $meal_date->id']) }}">削除</a>
+                    </td>
+                    <td>編集</td>
                  </tr>
+                 
              @endforeach
           </tbody>
         </table> 
+        
+        
       </div>
+      
+      <a href="add?selectedDate={{ $meal_date }}">食事追加</a>
    </div>
 @endsection

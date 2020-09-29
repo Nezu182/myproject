@@ -13,6 +13,7 @@
         
         <link rel="dns-prefetch" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
         
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ secure_asset('css/top.css') }}" rel="stylesheet">
@@ -20,8 +21,10 @@
     
     <body>
         
+     <div class="screen">
+         
         <div class="title">
-            <h1>Body Makeup Balance</h1>
+            <h1 class="name">Meal Balance .</h1>
         </div>
         
         <div class="bottom-btn">
@@ -34,4 +37,5 @@
             </div>
         </div>
         
+     </div>
     </body>
