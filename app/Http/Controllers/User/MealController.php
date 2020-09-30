@@ -19,7 +19,7 @@ class MealController extends Controller
         $meal_date = date_create($request->date);
         $meal_date = date_format($meal_date , 'Y-m-d');
         //dd($meal_date);
-        $meals = Meal::where('created_at' , 'like' , "%2020-09-27%" )->get();
+        $meals = Meal::where('created_at' , 'like' , $meal_date )->get();
         
         // $meals = Meal::where('user_id', 1)
         //     ->get()
@@ -52,7 +52,7 @@ class MealController extends Controller
         
       $meal_date = date_create($request->date);
       $meal_date = date_format($meal_date , 'Y-m-d');
-      $obj = Meal::where('created_at' , 'like' , $meal_date . '%')->get();
+      $obj = Meal::where('created_at' , 'like' , $meal_date )->get();
 
       $meal_date = $request->selectedDate;
       if ($meal_date != '') {
@@ -62,8 +62,7 @@ class MealController extends Controller
           
           $posts = Meal::all();
       }
-        
-        return view('user/meal_hibetsu?selectedDate=',['posts' => $posts, 'meal_date' => $meal_date]);
+        return view('user.meal_hibetsu',['posts' => $posts, 'meal_date' => $meal_date]);
     }
     
     public function edit()
