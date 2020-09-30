@@ -19,7 +19,10 @@
            </div>
            <div class="da">
                <p>
-                 
+                 <?php
+                    $meal_date = DateTime::createFromFormat('Y-m-d', $meal_date);
+                    echo $meal_date->format('n月j日');
+                  ?>
                </p>
            </div>
        </div>
