@@ -15,8 +15,7 @@
       <div class="date">
        <p>
           <?php
-            $meal_date = DateTime::createFromFormat('Y-m-d', $selectedDate);
-            echo $meal_date->format('n月j日');
+            echo date('m月d日', strtotime($selectedDate));
           ?>
        </p>
       </div>

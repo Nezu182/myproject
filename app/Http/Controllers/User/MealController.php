@@ -16,10 +16,28 @@ class MealController extends Controller
 {
     public function home(Request $request)
     {
+        // 合計値の変数の定義と初期化
+        $total_kcal = 0;
+        $total_sisitu = 0;
+        $total_tousitu = 0;
+        $total_tansuikabutu = 0;
+        $total_tousitu = 0;
+        
+        
         $meal_date = date_create($request->date);
         $meal_date = date_format($meal_date , 'Y-m-d');
         //dd($meal_date);
         $meals = Meal::where('created_at' , 'like' , $meal_date )->get();
+        
+        if(count($meals) > 0){
+            foreach($meals as $meal){
+                $total_kcal += $meal->kcal;
+                $total_sisitu += $meal->sisitu;
+                $total_tousitu += $meal->tousitu;
+                $total_tansuikabutu += $meal->tansuikabutu;
+                $total_tousitu += $meal->tousitu;
+            }
+        }
         
         // $meals = Meal::where('user_id', 1)
         //     ->get()
@@ -50,7 +68,7 @@ class MealController extends Controller
         //$meal->meal_date = Carbon::now();
         //$meal->save();
         
-      $meal_date = date_create($request->date);
+      $meal_date = date_create($request->selectedDate);
       $meal_date = date_format($meal_date , 'Y-m-d');
       $obj = Meal::where('created_at' , 'like' , $meal_date )->get();
 
@@ -62,6 +80,7 @@ class MealController extends Controller
           
           $posts = Meal::all();
       }
+        
         return view('user.meal_hibetsu',['posts' => $posts, 'meal_date' => $meal_date]);
     }
     
@@ -79,9 +98,8 @@ class MealController extends Controller
     
     public function create(Request $request)
     {
-        $meal_date = date_create($request->date);
+        $meal_date = date_create($request->meal_date);
         $meal_date = date_format($meal_date , 'Y-m-d');
-        $obj = Meal::where('created_at' , 'like' , $meal_date . '%')->get();
         
         $this->validate($request, Meal::$rules);
         

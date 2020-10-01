@@ -20,8 +20,7 @@
            <div class="da">
                <p>
                  <?php
-                    $meal_date = DateTime::createFromFormat('Y-m-d', $meal_date);
-                    echo $meal_date->format('n月j日');
+                    echo date('m月d日', strtotime($meal_date));
                   ?>
                </p>
            </div>
@@ -44,14 +43,14 @@
           <tbody>
              @foreach($posts as $meal)
                  <tr>
-                    <th>{{ $meal->id }}</th>
+                    <td>{{ $meal->id }}</td>
                     <td>{{ \Str::limit($meal->kcal,5) }}</td>
                     <td>{{ \Str::limit($meal->sisitu,5) }}</td>
                     <td>{{ \Str::limit($meal->tousitu,5) }}</td>
                     <td>{{ \Str::limit($meal->tansuikabutu,5) }}</td>
                     <td>{{ \Str::limit($meal->tanpakusitu,5) }}</td>
                     <td>
-                        <a href="{{ action('User\MealController@delete', ['id => $meal_date->id']) }}">削除</a>
+                        <a href="{{ action('User\MealController@delete', ['id => $meal->id']) }}">削除</a>
                     </td>
                     <td>編集</td>
                  </tr>
