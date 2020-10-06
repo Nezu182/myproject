@@ -1,6 +1,6 @@
 @extends('layouts.user')
 
-@section('title', 'Body Makeup Balance')
+@section('title', 'Meal Balance')
 
 @section('content')
    <div class="container">
@@ -20,7 +20,7 @@
            <div class="da">
                <p>
                  <?php
-                    echo date('m月d日', strtotime($meal_date));
+                    echo date('m月j日', strtotime($meal_date));
                   ?>
                </p>
            </div>
@@ -30,7 +30,6 @@
         <table>
           <thead>
              <tr>
-                <th width="5%">ID</th>
                 <th width="21.5%">カロリー</th>
                 <th width="21.5%">脂質</th>
                 <th width="21.5%">糖質</th>
@@ -43,7 +42,6 @@
           <tbody>
              @foreach($posts as $meal)
                  <tr>
-                    <td>{{ $meal->id }}</td>
                     <td>{{ \Str::limit($meal->kcal,5) }}</td>
                     <td>{{ \Str::limit($meal->sisitu,5) }}</td>
                     <td>{{ \Str::limit($meal->tousitu,5) }}</td>

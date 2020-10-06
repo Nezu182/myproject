@@ -14,20 +14,20 @@ use App\Meal;
 
 class MealController extends Controller
 {
-    public function home(Request $request)
+    public function home()
     {
         // 合計値の変数の定義と初期化
         $total_kcal = 0;
         $total_sisitu = 0;
         $total_tousitu = 0;
         $total_tansuikabutu = 0;
-        $total_tousitu = 0;
+        $total_tanpakusitu = 0;
         
         
-        $meal_date = date_create($request->date);
+        $meal_date = date_create();
         $meal_date = date_format($meal_date , 'Y-m-d');
-        //dd($meal_date);
-        $meals = Meal::where('created_at' , 'like' , $meal_date )->get();
+       
+        $meals = Meal::where('meal_date' , $meal_date )->get();
         
         if(count($meals) > 0){
             foreach($meals as $meal){
@@ -35,7 +35,7 @@ class MealController extends Controller
                 $total_sisitu += $meal->sisitu;
                 $total_tousitu += $meal->tousitu;
                 $total_tansuikabutu += $meal->tansuikabutu;
-                $total_tousitu += $meal->tousitu;
+                $total_tanpakusitu += $meal->tanpakusitu;
             }
         }
         
@@ -48,7 +48,7 @@ class MealController extends Controller
         //         return $value->sum('kcal', 'tansuikabutu', 'sisitu', 'tanpakusitu','tousitu');
         //     });
            
-        return view('user.home',  compact('meals', 'meal_date'));
+        return view('user.home',  compact('meals', 'meal_date','total_kcal','total_sisitu','total_tousitu','total_tansuikabutu', 'total_tanpakusitu'));
     }
     
     public function meal_hibetsu(Request $request)

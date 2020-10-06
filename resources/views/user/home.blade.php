@@ -1,6 +1,6 @@
 @extends('layouts.user')
 
-@section('title', 'Body Makeup Balance')
+@section('title', 'Meal Balance')
 
 @section('content')
    <div class="container">
@@ -44,7 +44,7 @@
             <dl>
                <dt>糖質</dt>
                <dd>{{ $meal->tousitu }}g</dd>
-            /dl>
+            </dl>
           </div>
           <div class="content">
             <dl>
