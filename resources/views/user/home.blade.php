@@ -31,31 +31,31 @@
           <div class="content">
             <dl>
                <dt>カロリー</dt>
-               <dd>{{ $meal->kcal }}g</dd>
+               <dd>{{ $total_kcal }}g</dd>
             </dl>
           </div>
           <div class="content">
             <dl>
                <dt>脂質</dt>
-               <dd>{{ $meal->sisitu }}g</dd>
+               <dd>{{ $total_sisitu }}g</dd>
             </dl>
           </div>  
           <div class="content">
             <dl>
                <dt>糖質</dt>
-               <dd>{{ $meal->tousitu }}g</dd>
+               <dd>{{ $total_tousitu }}g</dd>
             </dl>
           </div>
           <div class="content">
             <dl>
                <dt>炭水化物</dt>
-               <dd>{{ $meal->tansuikabutu }}g</dd>
+               <dd>{{ $total_tansuikabutu }}g</dd>
             </dl>
           </div>
           <div class="content">
             <dl>
                <dt>タンパク質</dt>
-               <dd>{{ $meal->tousitu }}g</dd>
+               <dd>{{ $total_tanpakusitu }}g</dd>
             </dl>
           </div>
          @endforeach
