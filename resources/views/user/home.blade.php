@@ -27,7 +27,7 @@
            <span>栄養素</span>
        </div>
        <div class="item">
-        @foreach ($meals as $meal)
+        
           <div class="content">
             <dl>
                <dt>カロリー</dt>
@@ -58,7 +58,7 @@
                <dd>{{ $total_tanpakusitu }}g</dd>
             </dl>
           </div>
-         @endforeach
+         
        </div>
           <div class="bottom-btn">
          <div class="a">

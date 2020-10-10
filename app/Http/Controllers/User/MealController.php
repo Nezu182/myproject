@@ -133,8 +133,8 @@ class MealController extends Controller
     
     public function delete (Request $request)
     {
-        $meal_date = Meal::find($request->id);
-        $meal_date->delete();
+        $meal = Meal::find($request->id);
+        $meal->delete();
         return redirect ('user/meal_hibetsu');
     }
     
