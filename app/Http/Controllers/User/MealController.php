@@ -135,7 +135,7 @@ class MealController extends Controller
     {
         $meal = Meal::find($request->id);
         $meal->delete();
-        return redirect ('user/meal_hibetsu');
+        return redirect ('user/meal_hibetsu?selectedDate=.');
     }
     
     
