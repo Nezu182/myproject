@@ -67,20 +67,15 @@ class MealController extends Controller
         //$meal->tousitu = $tousitu;
         //$meal->meal_date = Carbon::now();
         //$meal->save();
-        
-      $meal_date = date_create($request->selectedDate);
-      $meal_date = date_format($meal_date , 'Y-m-d');
-      $obj = Meal::where('created_at' , 'like' , $meal_date )->get();
+     
+      
 
-      $meal_date = $request->selectedDate;
-      if ($meal_date != '') {
-          
-          $posts = Meal::where('meal_date', $meal_date)->get();
-      } else {
-          
-          $posts = Meal::all();
-      }
+        $meal_date = $request->selectedDate;
+        if (empty($meal_date)) {
+            $meal_date = date("Y-m-d");
+        }
         
+        $posts = Meal::where('meal_date', $meal_date)->get();
         return view('user.meal_hibetsu',['posts' => $posts, 'meal_date' => $meal_date]);
     }
     
@@ -134,8 +129,12 @@ class MealController extends Controller
     public function delete (Request $request)
     {
         $meal = Meal::find($request->id);
+        $meal_date = date_create($meal->meal_date);
+        $meal_date = date_format($meal_date , 'Y-m-d');
+        
         $meal->delete();
-        return redirect ('user/meal_hibetsu?selectedDate=.');
+        
+        return redirect('user/meal_hibetsu?selectedDate='. $meal_date);
     }
     
     
