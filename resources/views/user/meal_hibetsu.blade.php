@@ -51,7 +51,9 @@
                     <td>
                         <a href="{{ action('User\MealController@delete', ['id' => $meal->id]) }}">削除</a>
                     </td>
-                    <td>編集</td>
+                    <td>
+                        <a href="{{ action('User\MealController@edit', ['id' => $meal->id]) }}">編集</a>
+                    </td>
                  </tr>
                  
              @endforeach

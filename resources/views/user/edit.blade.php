@@ -13,7 +13,11 @@
       <body>
          
        <div class="header">
-         <div class="day"> 日付</div>
+         <div class="day">
+           <p>
+              日付
+           </p>
+         </div>
          <div class="main-title">編集画面</div>
       </div>
        <div class="title">
@@ -56,7 +60,8 @@
            <botton type="button">戻る</botton>
          </div>
          <div class="b">
-           <botton type="button">登録</botton>
+           {{ csrf_field() }}
+           <input type="submit" value="登録">
          </div>
        </div>
        
