@@ -52,7 +52,7 @@
                         <a href="{{ action('User\MealController@delete', ['id' => $meal->id]) }}">削除</a>
                     </td>
                     <td>
-                        <a href="{{ action('User\MealController@edit', ['id' => $meal->id]) }}">編集</a>
+                        <a href="{{ action('User\MealController@edit', ['id' => $meal->id, 'meal_date' => $meal_date]) }}">編集</a>
                     </td>
                  </tr>
                  

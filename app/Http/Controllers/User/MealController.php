@@ -81,12 +81,17 @@ class MealController extends Controller
     
     public function edit(Request $request)
     {
+        $meal_date = date_create($request->meal_date);
+        $meal_date = date_format($meal_date , 'Y-m-d');
+        
+        $selectedDate = $request->selectedDate;
+        
         $meal = Meal::find($request->id);
         if (empty($meal)) {
             abort(404);
         }
         
-        return view('user.edit');
+        return view('user.edit', ['selectedDate' => $meal_date, 'meal' => $meal]);
     }
     
     public function add(Request $request)
@@ -144,14 +149,16 @@ class MealController extends Controller
     
     public function update (Request $request)
     {
+        // dd($request);
         $this->validate($request, Meal::$rules);
         $meal = Meal::find($request->id);
-        $meal_date = $request->all();
-        unset($meal_date['_token']);
-        
-        $meal->fill($meal_date)->save();
-        
-        return redirect('user/meal_hibetsu');
+        $meal_form = $request->all();
+        unset($meal_form['_token']);
+        // dd($meal_form);
+        $meal->fill($meal_form)->save();
+        // $meal->fill($redirect->all())->save();
+        // dd($meal);
+        return redirect('user/meal_hibetsu?selectedDate='. $meal->meal_date);
     }
     
 }
