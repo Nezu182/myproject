@@ -24,7 +24,7 @@ Route::group(['prefix' => 'user'], function() {
     Route::post('add', 'User\MealController@create')->middleware('auth');
     Route::get('calendar', 'CalendarController@calendar')->name('calendar');
     Route::get('date', 'User\MealController@date');
-    Route::post('delete', 'User\MealController@delete')->middleware('auth');
+    Route::get('delete', 'User\MealController@delete')->middleware('auth');
 });
 Auth::routes();
 

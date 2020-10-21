@@ -10,14 +10,6 @@
          <link rel="stylesheet" href="{{ secure_asset('css/meal_hibetsu.css') }}">
          
       </head>
-      
-      <form method="POST" onsubmit="return confirm_test()">
-        <script>
-            function confirm_test() {
-                var select = confirm("記録を削除しますか？");
-                return select;
-            }
-        </script>
        
        <div class="row1">
            <div class="col-md-8 mx-auto">
@@ -56,7 +48,7 @@
                     <td>{{ \Str::limit($meal->tanpakusitu,5) }}</td>
                     <td>
                         <a href="{{ action('User\MealController@delete', ['id' => $meal->id]) }}">
-                          <input type="submit"  value="削除"/>
+                          <button onclick="return confirm('削除しますか?')">削除</button>
                         </a>
                     </td>
                     <td>
@@ -66,8 +58,7 @@
                  
              @endforeach
           </tbody>
-        </table> 
-        </form>
+        </table>
       </div>
       
       <a href="add?selectedDate={{ $meal_date }}">食事追加</a>
