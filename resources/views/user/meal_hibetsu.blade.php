@@ -11,7 +11,13 @@
          
       </head>
       
-      <form action="{{ action('User\MealController@create') }}" method="post" enctype="multipart/form-data">
+      <form method="POST" onsubmit="return confirm_test()">
+        <script>
+            function confirm_test() {
+                var select = confirm("記録を削除しますか？");
+                return select;
+            }
+        </script>
        
        <div class="row1">
            <div class="col-md-8 mx-auto">
@@ -49,7 +55,9 @@
                     <td>{{ \Str::limit($meal->tansuikabutu,5) }}</td>
                     <td>{{ \Str::limit($meal->tanpakusitu,5) }}</td>
                     <td>
-                        <a href="{{ action('User\MealController@delete', ['id' => $meal->id]) }}">削除</a>
+                        <a href="{{ action('User\MealController@delete', ['id' => $meal->id]) }}">
+                          <input type="submit"  value="削除"/>
+                        </a>
                     </td>
                     <td>
                         <a href="{{ action('User\MealController@edit', ['id' => $meal->id, 'meal_date' => $meal_date]) }}">編集</a>
@@ -59,8 +67,7 @@
              @endforeach
           </tbody>
         </table> 
-        
-        
+        </form>
       </div>
       
       <a href="add?selectedDate={{ $meal_date }}">食事追加</a>
