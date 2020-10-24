@@ -38,45 +38,40 @@ class MealController extends Controller
                 $total_tanpakusitu += $meal->tanpakusitu;
             }
         }
-        
-        // $meals = Meal::where('user_id', 1)
-        //     ->get()
-        //     ->groupBy(function ($row) {
-        //         return $row->name;
-        //     })
-        //     ->map(function ($value) {
-        //         return $value->sum('kcal', 'tansuikabutu', 'sisitu', 'tanpakusitu','tousitu');
-        //     });
            
         return view('user.home',  compact('meals', 'meal_date','total_kcal','total_sisitu','total_tousitu','total_tansuikabutu', 'total_tanpakusitu'));
     }
     
     public function meal_hibetsu(Request $request)
     {
-        // ミールテーブルからデータを取得するためにミールモデルをNEWする
-        //$meal = new Meal;
-        
-        // ログインしているユーザーのユーザーIDを取得する
-        //$user_id = Auth::id();
-        //dd($user_id);
-        
-        //$meal->kcal = $kcal;
-        //$meal->tansuikabutu = $tansuikabutu;
-        //$meal->sisitu = $sisitu;
-        //$meal->tanpakusitu = $tanpakusitu;
-        //$meal->tousitu = $tousitu;
-        //$meal->meal_date = Carbon::now();
-        //$meal->save();
-     
-      
-
         $meal_date = $request->selectedDate;
         if (empty($meal_date)) {
             $meal_date = date("Y-m-d");
         }
+        if (!strptime($meal_date, '%Y-%m-%d')) {
+            return redirect('user/calendar');
+        }
+        // 合計値の変数の定義と初期化
+        $total_kcal = 0;
+        $total_sisitu = 0;
+        $total_tousitu = 0;
+        $total_tansuikabutu = 0;
+        $total_tanpakusitu = 0;
+       
+        $meals = Meal::where('meal_date' , $meal_date )->get();
+        
+        if(count($meals) > 0){
+            foreach($meals as $meal){
+                $total_kcal += $meal->kcal;
+                $total_sisitu += $meal->sisitu;
+                $total_tousitu += $meal->tousitu;
+                $total_tansuikabutu += $meal->tansuikabutu;
+                $total_tanpakusitu += $meal->tanpakusitu;
+            }
+        }
         
         $posts = Meal::where('meal_date', $meal_date)->get();
-        return view('user.meal_hibetsu',['posts' => $posts, 'meal_date' => $meal_date]);
+        return view('user.meal_hibetsu',['posts' => $posts, 'meal_date' => $meal_date, 'total_kcal' => $total_kcal,'total_sisitu' =>$total_sisitu,'total_tousitu' =>$total_tousitu,'total_tansuikabutu' =>$total_tansuikabutu, 'total_tanpakusitu' => $total_tanpakusitu]);
     }
     
     public function edit(Request $request)

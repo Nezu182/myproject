@@ -41,11 +41,11 @@
              @foreach($posts as $meal)
                  <tr>
                     <!-- <td>{{ \Str::limit($meal->id) }}</td> -->
-                    <td>{{ \Str::limit($meal->kcal,5) }}</td>
-                    <td>{{ \Str::limit($meal->sisitu,5) }}</td>
-                    <td>{{ \Str::limit($meal->tousitu,5) }}</td>
-                    <td>{{ \Str::limit($meal->tansuikabutu,5) }}</td>
-                    <td>{{ \Str::limit($meal->tanpakusitu,5) }}</td>
+                    <td>{{ \Str::limit($meal->kcal,5) }} kcal</td>
+                    <td>{{ \Str::limit($meal->sisitu,5) }} g</td>
+                    <td>{{ \Str::limit($meal->tousitu,5) }} g</td>
+                    <td>{{ \Str::limit($meal->tansuikabutu,5) }} g</td>
+                    <td>{{ \Str::limit($meal->tanpakusitu,5) }} g</td>
                     <td>
                         <a href="{{ action('User\MealController@delete', ['id' => $meal->id]) }}">
                           <button onclick="return confirm('削除しますか?')">削除</button>
@@ -57,8 +57,20 @@
                  </tr>
                  
              @endforeach
+             
+        
+          
+            
+               <tr style="color:red">
+                 <td>{{ $total_kcal }} kcal</td>
+                 <td>{{ $total_sisitu }} g</td>
+                 <td>{{ $total_tousitu }} g</td>
+                 <td>{{ $total_tansuikabutu }} g</td>
+                 <td>{{ $total_tanpakusitu }} g</td>
+               </tr>
           </tbody>
         </table>
+        
       </div>
       
       <a href="add?selectedDate={{ $meal_date }}">食事追加</a>
