@@ -19,7 +19,7 @@
          <h2>
              <?php
                 $meal_date = DateTime::createFromFormat('Y-m-d', $meal_date);
-                echo $meal_date->format('n月j日');
+                echo $meal_date->format('n/j');
              ?>
          </h2>
       </div>
@@ -30,25 +30,25 @@
         
           <div class="content">
             <dl>
-               <dt>カロリー　</dt>
+               <dt>カロリー</dt>
                <dd>{{ $total_kcal }} kcal</dd>
             </dl>
           </div>
           <div class="content">
             <dl>
-               <dt>脂質　　　</dt>
+               <dt>脂質</dt>
                <dd>{{ $total_sisitu }} g</dd>
             </dl>
           </div>  
           <div class="content">
             <dl>
-               <dt>糖質　　　</dt>
+               <dt>糖質</dt>
                <dd>{{ $total_tousitu }} g</dd>
             </dl>
           </div>
           <div class="content">
             <dl>
-               <dt>炭水化物　</dt>
+               <dt>炭水化物</dt>
                <dd>{{ $total_tansuikabutu }} g</dd>
             </dl>
           </div>
