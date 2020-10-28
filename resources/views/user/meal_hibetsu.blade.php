@@ -8,17 +8,20 @@
        <head>
          
          <link rel="stylesheet" href="{{ secure_asset('css/meal_hibetsu.css') }}">
+         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;469;700&display=swap" rel="stylesheet">
          
-      </head>
+       </head>
        
+       <body>
+          
        <div class="row1">
-           <div class="col-md-8 mx-auto">
+           <div class="title">
                <h2>日別食事一覧画面</h2>
            </div>
-           <div class="da">
+           <div class="day">
                <p>
                  <?php
-                    echo date('m月j日', strtotime($meal_date));
+                    echo date('m/j', strtotime($meal_date));
                   ?>
                </p>
            </div>
@@ -40,39 +43,45 @@
           <tbody>
              @foreach($posts as $meal)
                  <tr>
-                    <!-- <td>{{ \Str::limit($meal->id) }}</td> -->
                     <td>{{ \Str::limit($meal->kcal,5) }} kcal</td>
                     <td>{{ \Str::limit($meal->sisitu,5) }} g</td>
                     <td>{{ \Str::limit($meal->tousitu,5) }} g</td>
                     <td>{{ \Str::limit($meal->tansuikabutu,5) }} g</td>
                     <td>{{ \Str::limit($meal->tanpakusitu,5) }} g</td>
-                    <td>
-                        <a href="{{ action('User\MealController@delete', ['id' => $meal->id]) }}">
+                    <td class="delete-button">
+                          <a href="{{ action('User\MealController@delete', ['id' => $meal->id]) }}">
                           <button onclick="return confirm('削除しますか?')">削除</button>
                         </a>
                     </td>
-                    <td>
-                        <a href="{{ action('User\MealController@edit', ['id' => $meal->id, 'meal_date' => $meal_date]) }}">編集</a>
+                    <td class="edit-button">
+                        <a href="{{ action('User\MealController@edit', ['id' => $meal->id, 'meal_date' => $meal_date]) }}">
+                            <botton type="button">編集</botton></botton>
+                        </a>
                     </td>
                  </tr>
                  
              @endforeach
-             
-        
-          
-            
                <tr style="color:red">
-                 <td>{{ $total_kcal }} kcal</td>
-                 <td>{{ $total_sisitu }} g</td>
-                 <td>{{ $total_tousitu }} g</td>
-                 <td>{{ $total_tansuikabutu }} g</td>
-                 <td>{{ $total_tanpakusitu }} g</td>
+                   <td>{{ $total_kcal }} kcal</td>
+                   <td>{{ $total_sisitu }} g</td>
+                   <td>{{ $total_tousitu }} g</td>
+                   <td>{{ $total_tansuikabutu }} g</td>
+                   <td>{{ $total_tanpakusitu }} g</td>
                </tr>
           </tbody>
         </table>
-        
       </div>
+      <div class="bottom-btn">
+         <div class="a">
+           <botton type="button">戻る</botton>
+         </div>
+         <div class="b">
+          <botton type="button">
+           <a href="add?selectedDate={{ $meal_date }}">食事追加</a>
+          </botton>
+         </div>
+       </div>
       
-      <a href="add?selectedDate={{ $meal_date }}">食事追加</a>
+      </body>
    </div>
 @endsection

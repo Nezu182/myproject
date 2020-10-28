@@ -6,6 +6,7 @@
    <head>
          
          <link rel="stylesheet" href="{{ secure_asset('css/calendar.css') }}">
+         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;469;700&display=swap" rel="stylesheet">
          
    </head>
    

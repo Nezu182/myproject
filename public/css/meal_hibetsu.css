@@ -1,0 +1,111 @@
+body {
+    background-color: white;
+}
+
+.title {
+    color: black;
+    text-align: center;
+    margin: 20px 10px 80px 10px;
+}
+
+.day {
+    color: black;
+    font-size: 25px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.item {
+    color: #0068b7;
+    text-align: center;
+    font-size: 18px;
+}
+
+td {
+    background: #fac559;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px silver;
+    font-family: 'Oswald', sans-serif;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.bottom-btn {
+    width: 100%;
+    padding-top:40px;
+    padding-bottom: 30px;
+}
+
+.a {
+    float: left;
+    position: relative;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #FFF;
+    background: #03A9F4;/*色*/
+    border: solid 1px #0f9ada;/*線色*/
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+
+.a:active {
+    border: solid 1px #03A9F4;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.b {
+    float: right;
+    position: relative;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #FFF;
+    background: #03A9F4;/*色*/
+    border: solid 1px #0f9ada;/*線色*/
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+
+.b:active {
+    border: solid 1px #03A9F4;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.delete-button {
+    position: relative;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #FFF;
+    background: #03A9F4;/*色*/
+    border: solid 1px #0f9ada;/*線色*/
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+
+.delete-button:active {
+    border: solid 1px #03A9F4;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+.edit-button {
+    position: relative;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #FFF;
+    background: #03A9F4;/*色*/
+    border: solid 1px #0f9ada;/*線色*/
+    border-radius: 4px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+
+.edit-button:active {
+    border: solid 1px #03A9F4;
+    box-shadow: none;
+    text-shadow: none;
+}
+

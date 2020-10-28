@@ -8,6 +8,7 @@
       <head>
          
          <link rel="stylesheet" href="{{ secure_asset('css/home.css') }}">
+         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;469;700&display=swap" rel="stylesheet">
          
       </head>
       
@@ -28,31 +29,31 @@
        </div>
        <div class="item">
         
-          <div class="content">
+          <div class="kacl">
             <dl>
                <dt>カロリー</dt>
                <dd>{{ $total_kcal }} kcal</dd>
             </dl>
           </div>
-          <div class="content">
+          <div class="sisitu">
             <dl>
                <dt>脂質</dt>
                <dd>{{ $total_sisitu }} g</dd>
             </dl>
           </div>  
-          <div class="content">
+          <div class="tousitu">
             <dl>
                <dt>糖質</dt>
                <dd>{{ $total_tousitu }} g</dd>
             </dl>
           </div>
-          <div class="content">
+          <div class="tansuikabutu">
             <dl>
                <dt>炭水化物</dt>
                <dd>{{ $total_tansuikabutu }} g</dd>
             </dl>
           </div>
-          <div class="content">
+          <div class="tanpakusitu">
             <dl>
                <dt>タンパク質</dt>
                <dd>{{ $total_tanpakusitu }} g</dd>
@@ -60,7 +61,7 @@
           </div>
          
        </div>
-          <div class="bottom-btn">
+       <div class="bottom-btn">
          <div class="a">
            <botton type="button">過去の記録</botton>
          </div>
