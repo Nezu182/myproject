@@ -16,6 +16,8 @@
         
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ secure_asset('css/meal_hibetsu.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;469;700&display=swap" rel="stylesheet">
     </head>
     
     <body>

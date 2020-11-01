@@ -5,13 +5,6 @@
 @section('content')
    <div class="container">
        
-       <head>
-         
-         <link rel="stylesheet" href="{{ secure_asset('css/meal_hibetsu.css') }}">
-         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;469;700&display=swap" rel="stylesheet">
-         
-       </head>
-       
        <body>
           
        <div class="row1">
@@ -71,17 +64,14 @@
           </tbody>
         </table>
       </div>
-      <div class="bottom-btn">
-         <div class="a">
-           <botton type="button">戻る</botton>
+      <div class="btn-space">
+         <div>
+          <button class="btn-pink btn">戻る</button>
          </div>
-         <div class="b">
-          <botton type="button">
-           <a href="add?selectedDate={{ $meal_date }}">食事追加</a>
-          </botton>
+         <div>
+          <button class="btn-pink btn" onclick="location.href='add?selectedDate={{ $meal_date }}'">食事追加</button>
          </div>
-       </div>
-      
+      </div>
       </body>
    </div>
 @endsection

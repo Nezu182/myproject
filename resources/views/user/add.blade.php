@@ -7,15 +7,17 @@
        <head>
          
          <link rel="stylesheet" href="{{ secure_asset('css/add.css') }}">
+         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;469;700&display=swap" rel="stylesheet">
          
       </head>
-      
+      <body>
+     
       <form action="{{ action('User\MealController@create') }}" method="post" enctype="multipart/form-data">
        
       <div class="date">
        <p>
           <?php
-            echo date('m月d日', strtotime($selectedDate));
+            echo date('m/d', strtotime($selectedDate));
           ?>
        </p>
       </div>
@@ -80,5 +82,6 @@
        <input type="hidden" name="meal_time" value="1">
        {{ csrf_field() }}
       </form>
+      </body>
    </div>
 @endsection
