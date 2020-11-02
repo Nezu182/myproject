@@ -41,18 +41,13 @@
                     <td>{{ \Str::limit($meal->tousitu,5) }} g</td>
                     <td>{{ \Str::limit($meal->tansuikabutu,5) }} g</td>
                     <td>{{ \Str::limit($meal->tanpakusitu,5) }} g</td>
-                    <td class="delete-button">
-                          <a href="{{ action('User\MealController@delete', ['id' => $meal->id]) }}">
-                          <button onclick="return confirm('削除しますか?')">削除</button>
-                        </a>
+                    <td>
+                      <button class="btn-pink btn" onclick="return confirm('削除しますか?')" onclick="location.href='{{ action('User\MealController@delete', ['id' => $meal->id]) }}'">削除</button>
                     </td>
-                    <td class="edit-button">
-                        <a href="{{ action('User\MealController@edit', ['id' => $meal->id, 'meal_date' => $meal_date]) }}">
-                            <botton type="button">編集</botton></botton>
-                        </a>
+                    <td>
+                      <button class="btn-pink btn" onclick="location.href='{{ action('User\MealController@edit', ['id' => $meal->id, 'meal_date' => $meal_date]) }}'">編集</button>
                     </td>
                  </tr>
-                 
              @endforeach
                <tr style="color:red">
                    <td>{{ $total_kcal }} kcal</td>

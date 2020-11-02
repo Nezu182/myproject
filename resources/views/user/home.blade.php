@@ -61,14 +61,14 @@
           </div>
          
        </div>
-       <div class="bottom-btn">
-         <div class="a">
-           <botton type="button">過去の記録</botton>
+       <div class="btn-space">
+         <div>
+          <button class="btn-pink btn">過去の記録</button>
          </div>
-         <div class="b">
-           <botton type="botton">編集</botton>
+         <div>
+          <button class="btn-pink btn">編集</button>
          </div>
-       </div>
+      </div>
        
       </body>
    </div>

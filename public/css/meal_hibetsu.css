@@ -73,22 +73,25 @@ td {
     text-shadow: none;
 }
 
-.delete-button {
-    position: relative;
-    padding: 0.25em 0.5em;
-    text-decoration: none;
-    color: #FFF;
-    background: #03A9F4;/*色*/
-    border: solid 1px #0f9ada;/*線色*/
-    border-radius: 4px;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
-    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+.delete-button,
+.delete-button.disabled, .delete-button:disabled {
+  color: #fff;
+  background-color: #00947a;
+  border-color: #00947a;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .delete-button:active {
-    border: solid 1px #03A9F4;
-    box-shadow: none;
-    text-shadow: none;
+  border: solid 1px #03A9F4;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.delete-button:hover {
+  color: #fff;
+  background-color: #a3d6cc;
+  border-color: #a3d6cc;
 }
 
 .edit-button {
@@ -109,7 +112,14 @@ td {
     text-shadow: none;
 }
 
+.edit-button:focus, .edit-button.focus,
+.edit-button:not(:disabled):not(.disabled):active:focus, .edit-button:not(:disabled):not(.disabled).active:focus,
+.show > .edit-button.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(200, 123, 255, 0.5);
+}
+
 .btn-space  {
+    margin-top: 50px;
     display: flex;
     justify-content: space-between;
 }

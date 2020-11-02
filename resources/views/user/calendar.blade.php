@@ -33,7 +33,11 @@
                   {!! $week !!}
                @endforeach
            </table>
-           
+          <div class="btn-space">
+            <div>
+               <button class="btn-pink btn">戻る</button>
+            </div>
+          </div>
        </div>
        {{-- .content --}}
    </div>

@@ -27,15 +27,14 @@
             <h1 class="name">Meal Balance .</h1>
         </div>
         
-        <div class="bottom-btn">
-            <div class="a">
-               <botton type="button">アカウント登録</botton>
-            </div>
-        
-            <div class="b">
-               <botton type="button">ログイン</botton>
-            </div>
-        </div>
+      <div class="btn-space">
+         <div>
+           <button class="btn-pink btn">アカウント登録</button>
+         </div>
+         <div>
+           <button class="btn-pink btn">ログイン</button>
+         </div>
+      </div>
         
      </div>
     </body>
