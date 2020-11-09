@@ -71,7 +71,7 @@ class MealController extends Controller
         }
         
         $posts = Meal::where('meal_date', $meal_date)->get();
-        return view('user.meal_hibetsu',['posts' => $posts, 'meal_date' => $meal_date, 'total_kcal' => $total_kcal,'total_sisitu' =>$total_sisitu,'total_tousitu' =>$total_tousitu,'total_tansuikabutu' =>$total_tansuikabutu, 'total_tanpakusitu' => $total_tanpakusitu]);
+        return view('user.meal_hibetsu', ['posts' => $posts, 'meal_date' => $meal_date, 'total_kcal' => $total_kcal,'total_sisitu' =>$total_sisitu,'total_tousitu' =>$total_tousitu,'total_tansuikabutu' =>$total_tansuikabutu, 'total_tanpakusitu' => $total_tanpakusitu]);
     }
     
     public function edit(Request $request)

@@ -35,7 +35,7 @@
            </table>
           <div class="btn-space">
             <div>
-               <button class="btn-pink btn">戻る</button>
+               <button class="btn-pink btn" type="button" onclick="location.href='/user/home'">戻る</button>
             </div>
           </div>
        </div>

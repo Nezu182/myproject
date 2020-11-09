@@ -1,0 +1,43 @@
+.header {
+    width: 100%;
+    padding-top: 50px;
+}
+
+.day {
+    float: left;
+    font-size: 25px;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 30px;
+    color: black;
+}
+
+.title {
+    text-align: left;
+    font-size: 25px;
+    padding: 30px 0 10px 0;
+}
+
+.content {
+    display: inline-block;
+    padding: 30px 100px 70px 100px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+
+.footer {
+    width: 100%;
+    padding-top:40px;
+    padding-bottom: 30px;
+}
+ .bottom-btn {
+    width: 100%;
+    padding-top:40px;
+    padding-bottom: 30px;
+}
+
+

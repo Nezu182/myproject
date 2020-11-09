@@ -61,7 +61,7 @@
       </div>
       <div class="btn-space">
          <div>
-          <button class="btn-pink btn">戻る</button>
+          <button class="btn-pink btn" type="button" onclick="location.href='/user/calendar'">戻る</button>
          </div>
          <div>
           <button class="btn-pink btn" onclick="location.href='add?selectedDate={{ $meal_date }}'">食事追加</button>

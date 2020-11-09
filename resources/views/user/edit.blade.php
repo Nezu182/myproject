@@ -6,11 +6,9 @@
    <div class="container">
        <head>
          
-         <link rel="stylesheet" href="{{ secure_asset('css/edit.css') }}">
+         <link rel="stylesheet" href="{{ secure_asset('css/add-edit.css') }}">
          
       </head>
-      
-      <body>
        
       <form action="{{ action('User\MealController@update') }}" method="post" enctype="multipart/form-data">
       
@@ -18,7 +16,7 @@
          <div class="day">
            <p>
              <?php
-                echo date('m月d日', strtotime($selectedDate));
+                echo date('m/d', strtotime($selectedDate));
              ?>
            </p>
          </div>
@@ -34,24 +32,24 @@
        <div class="title">
            <span>栄養素</span>
        </div>
-       
-       <div class="content">
+       <div class="item">
+         <div class="content">
           <dl>
              <dt>カロリー</dt>
-             <dd><input type="number" name="kcal" min="-0.9" max="9999.9" step="0.1"/>  g</dd>
+             <dd><input type="number" name="kcal" min="-0.9" max="9999.9" step="0.1"/>  kcal</dd>
           </dl>
        </div>
-       <div class="content">
-          <dl>
-             <dt>脂質</dt>
-             <dd><input type="number" name="sisitu" min="-0.9" max="999.9" step="0.1"/>  g</dd>
-          </dl>
-       </div>  
-       <div class="content">
-          <dl>
-             <dt>糖質</dt>
-             <dd><input type="number" name="tousitu" min="-0.9" max="999.9" step="0.1"/>  g</dd>
-          </dl>
+         <div class="content">
+            <dl>
+              <dt>脂質</dt>
+              <dd><input type="number" name="sisitu" min="-0.9" max="999.9" step="0.1"/>  g</dd>
+            </dl>
+         </div>  
+         <div class="content">
+            <dl>
+               <dt>糖質</dt>
+               <dd><input type="number" name="tousitu" min="-0.9" max="999.9" step="0.1"/>  g</dd>
+            </dl>
        </div>
        <div class="content">
           <dl>
@@ -65,20 +63,21 @@
              <dd><input type="number" name="tanpakusitu" min="-0.9" max="999.9" step="0.1"/>  g</dd>
           </dl>
        </div>
-       
-       <div class="bottom-btn">
-         <div class="a">
-           <botton type="button">戻る</botton>
-         </div>
-         <div class="b">
-           {{ csrf_field() }}
-           <input type="submit" value="更新">
-         </div>
        </div>
+       <div class="btn-space">
+         <div>
+          <button class="btn-pink btn" type="button" onclick="location.href='/user/meal_hibetsu'">戻る</button>
+         </div>
+         <div>
+          {{ csrf_field() }}
+          <button class="btn-pink btn" type="submit">
+          	<input type="submit" value="更新">
+          </button>
+         </div>
+      </div>
        <input type="hidden" name="meal_date" value="{{ $selectedDate }}">
        <input type="hidden" name="id" value="{{ $meal->id }}">
        
        </form>
-      </body>
    </div>
 @endsection

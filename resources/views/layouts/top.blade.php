@@ -29,10 +29,10 @@
         
       <div class="btn-space">
          <div>
-           <button class="btn-pink btn">アカウント登録</button>
+           <button class="btn-pink btn" type="button" onclick="location.href='/register'">アカウント登録</button>
          </div>
          <div>
-           <button class="btn-pink btn">ログイン</button>
+           <button class="btn-pink btn" type="button" onclick="location.href='/login'">ログイン</button>
          </div>
       </div>
         
