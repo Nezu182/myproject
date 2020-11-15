@@ -18,7 +18,7 @@ class CreateMealsTable extends Migration
             $table->string('user_id');
             $table->datetime('meal_date');
             $table->string('meal_time');
-            $table->decimal('kcal', 4, 1);
+            $table->decimal('kcal', 5, 1);
             $table->decimal('tansuikabutu', 3, 1);
             $table->decimal('sisitu', 3, 1);
             $table->decimal('tanpakusitu', 3, 1);

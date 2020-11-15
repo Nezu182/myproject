@@ -22,6 +22,14 @@ body {
     font-size: 80px;
 }
 
+/*.focus_line {*/
+/*  position: absolute;*/
+/*  height: 2px;*/
+/*	transition: 0.4s;*/
+/*	background-color: #7f1184;*/
+/*	width: 60px;*/
+/*}*/
+
 .btn-space  {
     margin-top: 50px;
     display: flex;

@@ -12,18 +12,20 @@
       </head>
       <body>
      
-      <form action="{{ action('User\MealController@create') }}" method="post" enctype="multipart/form-data">
+      
        
-      <div class="header">
-         <div class="day">
+      
+         
+      <div class="main-title">食事追加画面</div>
+      
+      <div class="day">
            <p>
              <?php
                 echo date('m/d', strtotime($selectedDate));
              ?>
            </p>
          </div>
-      <div class="main-title">食事追加画面</div>
-      </div>
+      
       @if (count($errors) > 0)
             <ul>
                 @foreach($errors->all() as $e)
@@ -31,40 +33,38 @@
                 @endforeach
             </ul>
       @endif
+      
+      <form action="{{ action('User\MealController@create') }}" method="post" enctype="multipart/form-data">
+      
        <div class="title">
            <span>栄養素</span>
        </div>
        <div class="item">
          <div class="content">
-          <dl>
-             <dt>カロリー</dt>
-             <dd><input type="number" name="kcal" min="-0.9" max="9999.9" step="0.1"/>  kcal</dd>
-          </dl>
-       </div>
+           <input class="ef" type="number" name="kcal" min="-0.9" max="9999.9" step="0.1"/ placeholder="">
+	         <label>カロリー</label>
+	           <span class="focus_line"></span>
+         </div>
          <div class="content">
-            <dl>
-              <dt>脂質</dt>
-              <dd><input type="number" name="sisitu" min="-0.9" max="999.9" step="0.1"/>  g</dd>
-            </dl>
+           <input class="ef" type="number" name="sisitu" min="-0.9" max="99.9" step="0.1"/ placeholder="">
+	         <label>脂質</label>
+	           <span class="focus_line"></span>
          </div>  
          <div class="content">
-            <dl>
-               <dt>糖質</dt>
-               <dd><input type="number" name="tousitu" min="-0.9" max="999.9" step="0.1"/>  g</dd>
-            </dl>
-       </div>
-       <div class="content">
-          <dl>
-             <dt>炭水化物</dt>
-             <dd><input type="number" name="tansuikabutu" min="-0.9" max="999.9" step="0.1"/>  g</dd>
-          </dl>
-       </div>
-       <div class="content">
-          <dl>
-             <dt>タンパク質</dt>
-             <dd><input type="number" name="tanpakusitu" min="-0.9" max="999.9" step="0.1"/>  g</dd>
-          </dl>
-       </div>
+           <input class="ef" type="number" name="tousitu" min="-0.9" max="99.9" step="0.1"/ placeholder="">
+	         <label>糖質</label>
+	           <span class="focus_line"></span>
+         </div>
+         <div class="content">
+           <input class="ef" type="number" name="tansuikabutu" min="-0.9" max="99.9" step="0.1"/ placeholder="">
+	         <label>炭水化物</label>
+	           <span class="focus_line"></span>
+         </div>
+         <div class="content">
+           <input class="ef" type="number" name="tanpakusitu" min="-0.9" max="99.9" step="0.1"/ placeholder="">
+	         <label>タンパク質</label>
+	           <span class="focus_line"></span>
+         </div>
        </div>
        <div class="btn-space">
          <div>
@@ -73,7 +73,7 @@
          <div>
           {{ csrf_field() }}
           <button class="btn-pink btn" type="submit">
-          	<input type="submit" value="登録">
+          	{{ __('登録') }} 
           </button>
          </div>
        <input type="hidden" name="meal_date" value="{{ $selectedDate }}">

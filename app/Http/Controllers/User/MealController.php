@@ -44,6 +44,7 @@ class MealController extends Controller
     
     public function meal_hibetsu(Request $request)
     {
+        
         $meal_date = $request->selectedDate;
         if (empty($meal_date)) {
             $meal_date = date("Y-m-d");

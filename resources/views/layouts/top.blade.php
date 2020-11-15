@@ -25,6 +25,7 @@
          
         <div class="title">
             <h1 class="name">Meal Balance .</h1>
+            <span class="focus_line"></span>
         </div>
         
       <div class="btn-space">

@@ -36,7 +36,7 @@
           <tbody>
              @foreach($posts as $meal)
                  <tr>
-                    <td>{{ \Str::limit($meal->kcal,5) }} kcal</td>
+                    <td>{{ \Str::limit($meal->kcal,6) }} kcal</td>
                     <td>{{ \Str::limit($meal->sisitu,5) }} g</td>
                     <td>{{ \Str::limit($meal->tousitu,5) }} g</td>
                     <td>{{ \Str::limit($meal->tansuikabutu,5) }} g</td>
@@ -61,7 +61,10 @@
       </div>
       <div class="btn-space">
          <div>
-          <button class="btn-pink btn" type="button" onclick="location.href='/user/calendar'">戻る</button>
+          <button class="btn-pink btn" type="button" onclick="location.href='/user/home'">戻る</button>
+         </div>
+         <div>
+          <button class="btn-pink btn" type="button" onclick="location.href='/user/calendar'">カレンダー</button>
          </div>
          <div>
           <button class="btn-pink btn" onclick="location.href='add?selectedDate={{ $meal_date }}'">食事追加</button>

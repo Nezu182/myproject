@@ -63,10 +63,10 @@
        </div>
        <div class="btn-space">
          <div>
-          <button class="btn-pink btn" type="button" onclick="location.href='/user/meal_hibetsu'">過去の記録</button>
+          <button class="btn-pink btn" type="button" onclick="location.href='/user/calendar'">過去の記録</button>
          </div>
          <div>
-          <button class="btn-pink btn">編集</button>
+          <button class="btn-pink btn" type="button" onclick="location.href='/user/meal_hibetsu'">編集</button>
          </div>
       </div>
        
