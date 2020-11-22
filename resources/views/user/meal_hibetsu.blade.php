@@ -8,8 +8,8 @@
        <body>
           
        <div class="row1">
-           <div class="title">
-               <h2>日別食事一覧画面</h2>
+           <div class="main-title">
+               日別食事一覧画面
            </div>
            <div class="day">
                <p>

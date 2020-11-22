@@ -2,10 +2,11 @@ body {
     background-color: white;
 }
 
-.title {
+.main-title {
+    font-size: 35px;
     color: black;
     text-align: center;
-    margin: 20px 10px 80px 10px;
+    margin: 100px 10px 50px 10px;
 }
 
 .day {

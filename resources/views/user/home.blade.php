@@ -15,7 +15,7 @@
       <form action="{{ action('User\MealController@home') }}" method="post" enctype="multipart/form-data">
       
       <body>
-          
+          <div class="main-title">ホーム</div>
        <div class="day">
          <h2>
              <?php
@@ -59,7 +59,6 @@
                <dd>{{ $total_tanpakusitu }} g</dd>
             </dl>
           </div>
-         
        </div>
        <div class="btn-space">
          <div>

@@ -12,10 +12,6 @@
       </head>
       <body>
      
-      
-       
-      
-         
       <div class="main-title">食事追加画面</div>
       
       <div class="day">
@@ -42,27 +38,27 @@
        <div class="item">
          <div class="content">
            <input class="ef" type="number" name="kcal" min="-0.9" max="9999.9" step="0.1"/ placeholder="">
-	         <label>カロリー</label>
+	         <label>カロリー</label><a>kcal</a>
 	           <span class="focus_line"></span>
          </div>
          <div class="content">
            <input class="ef" type="number" name="sisitu" min="-0.9" max="99.9" step="0.1"/ placeholder="">
-	         <label>脂質</label>
+	         <label>脂質</label><a>g</a>
 	           <span class="focus_line"></span>
          </div>  
          <div class="content">
            <input class="ef" type="number" name="tousitu" min="-0.9" max="99.9" step="0.1"/ placeholder="">
-	         <label>糖質</label>
+	         <label>糖質</label><a>g</a>
 	           <span class="focus_line"></span>
          </div>
          <div class="content">
            <input class="ef" type="number" name="tansuikabutu" min="-0.9" max="99.9" step="0.1"/ placeholder="">
-	         <label>炭水化物</label>
+	         <label>炭水化物</label><a>g</a>
 	           <span class="focus_line"></span>
          </div>
          <div class="content">
            <input class="ef" type="number" name="tanpakusitu" min="-0.9" max="99.9" step="0.1"/ placeholder="">
-	         <label>タンパク質</label>
+	         <label>タンパク質</label><a>g</a>
 	           <span class="focus_line"></span>
          </div>
        </div>

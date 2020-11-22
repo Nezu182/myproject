@@ -13,7 +13,9 @@
    <div class="flex-center position-ref full-height">
        <div class="content">
            
-           <div>
+           <div class="main-title">カレンダー</div>
+           
+           <div class="day">
                <a href="?ym={{ $prev }}">&lt;</a>
                <span calss="month">{{ $month }}</span>
                <a href="?ym={{ $next }}">&gt;</a>
