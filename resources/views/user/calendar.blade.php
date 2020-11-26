@@ -1,8 +1,9 @@
 @extends('layouts.user')
 
-@section('title', 'Body Makeup Balance')
+@section('title', 'Meal Balance')
 
 @section('content')
+ <div class="container">
    <head>
          
          <link rel="stylesheet" href="{{ secure_asset('css/calendar.css') }}">
@@ -44,4 +45,5 @@
        {{-- .content --}}
    </div>
    {{-- .flex-center .position-ref .full-height --}}
+ </div>
 @endsection

@@ -1,7 +1,6 @@
 body {
     background-color: #fff;
-    color: #636b6f;
-    font-family: 'Oswald', sans-serif;
+    color: #ffffff;
     font-weight: 200;
     height: 100vh;
     margin:0;
@@ -19,6 +18,7 @@ th {
     height: 80px;
     width: 120px;
     text-align: center;
+    color: #636b6f;
 }
 
 td {

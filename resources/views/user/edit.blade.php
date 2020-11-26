@@ -11,9 +11,9 @@
       </head>
        
       <form action="{{ action('User\MealController@update') }}" method="post" enctype="multipart/form-data">
+      	
          <div class="main-title">編集画面</div>
-         
-         
+        
          <div class="day">
            <p>
              <?php
@@ -22,7 +22,7 @@
            </p>
          </div>
     
-  </div>
+  
       @if (count($errors) > 0)
             <ul>
                 @foreach($errors->all() as $e)
@@ -76,4 +76,5 @@
        
        </form>
    </div>
+   
 @endsection

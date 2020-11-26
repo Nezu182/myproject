@@ -10,7 +10,7 @@
          <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;469;700&display=swap" rel="stylesheet">
          
       </head>
-      <body>
+        <body>
      
       <div class="main-title">食事追加画面</div>
       
@@ -30,7 +30,7 @@
             </ul>
       @endif
       
-      <form action="{{ action('User\MealController@create') }}" method="post" enctype="multipart/form-data">
+          <form action="{{ action('User\MealController@create') }}" method="post" enctype="multipart/form-data">
       
        <div class="title">
            <span>栄養素</span>
@@ -75,7 +75,8 @@
        <input type="hidden" name="meal_date" value="{{ $selectedDate }}">
        <input type="hidden" name="meal_time" value="1">
        {{ csrf_field() }}
-      </form>
-      </body>
-   </div>
+           </form>
+         </body>
+       </div>
+    </div>
 @endsection
