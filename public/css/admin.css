@@ -17,7 +17,26 @@ body {
 
 .navbar-brand {
   color: #fff !important;
+  cursor: pointer;
 }
+
+.dropdown-link {
+  display: block;
+}
+
+.gnav li li {
+    height: 0;
+    overflow: hidden;
+    transition: .5s;
+    cursor: pointer;
+}
+
+
+.gnav li:hover > ul > li {
+    height: 2rem;
+    overflow: visible;
+}
+
 
 
 .nav-link {

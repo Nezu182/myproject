@@ -29,8 +29,8 @@
                 <th width="21.5%">糖質</th>
                 <th width="21.5%">炭水化物</th>
                 <th width="21.5%">タンパク質</th>
-                <th width="21.5%"></th>
-                <th width="21.5%"></th>
+                <th width="11.5%"></th>
+                <th width="11.5%"></th>
              </tr>
           </thead>
           <tbody>
@@ -42,7 +42,17 @@
                     <td>{{ \Str::limit($meal->tansuikabutu,5) }} g</td>
                     <td>{{ \Str::limit($meal->tanpakusitu,5) }} g</td>
                     <td>
-                      <button class="btn-pink btn" onclick="location.href='{{ action('User\MealController@delete', ['id' => $meal->id]) }}';return confirm('削除しますか?')">削除</button>
+                      <script type="text/javascript">
+                         function Check(){
+                            var checked = confirm("削除しますか？");
+                            if (checked == true) {
+                                      location.href='{{ action('User\MealController@delete', ['id' => $meal->id]) }}'
+                            } else {
+                                      return false;
+                            }
+                          }
+                      </script>
+                      <button class="btn-pink btn" onclick="return Check()">削除</button>
                     </td>
                     <td>
                       <button class="btn-pink btn" onclick="location.href='{{ action('User\MealController@edit', ['id' => $meal->id, 'meal_date' => $meal_date]) }}'">編集</button>

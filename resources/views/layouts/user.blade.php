@@ -25,10 +25,18 @@
         <div id="app">
             <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
                 <div calss="container" style="width: 100%;">
-                    <a calss="navbar-brand">
-                        Meal Balance
-                    </a>
-                    
+                  
+                 <ul class="gnav">
+                  <li>
+                    <div calss="navbar-brand">Meal Balance</div>
+                    <ul>
+                        <li><a calss="dropdown-link" onclick="location.href='/user/home'">ホーム</a></li>
+                        <li><a calss="dropdown-link" onclick="location.href='/user/meal_hibetsu'">日別食事一覧</a></li>
+                        <li><a calss="dropdown-link" onclick="location.href='/user/calendar'">カレンダー</a></li>
+                    </ul>
+                  </li>
+                 </ul>
+                  
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
