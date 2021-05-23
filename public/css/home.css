@@ -33,7 +33,7 @@ h2 {
 
 .kacl {
     display: inline-block;
-    padding: 100px 53px 45px 53px;
+    padding: 50px 53px 45px 53px;
     color: #0068b7;
     text-align: center;
     border-radius: 8px;
@@ -43,9 +43,14 @@ h2 {
     background: #fac559; 
 }
 
+.brack{
+    color: #0068b7;
+    font-size: 4em;
+}
+
 .sisitu {
     display: inline-block;
-    padding: 100px 70px 45px 70px;
+    padding: 50px 70px 45px 70px;
     color: #0068b7;
     text-align: center;
     border-radius: 8px;
@@ -57,7 +62,7 @@ h2 {
 
 .tousitu {
     display: inline-block;
-    padding: 100px 70px 45px 70px;
+    padding: 50px 70px 45px 70px;
     color: #0068b7;
     text-align: center;
     border-radius: 8px;
@@ -69,7 +74,7 @@ h2 {
 
 .tansuikabutu {
     display: inline-block;
-    padding: 100px 50px 45px 50px;
+    padding: 50px 50px 45px 50px;
     color: #0068b7;
     text-align: center;
     border-radius: 8px;
@@ -81,7 +86,7 @@ h2 {
 
 .tanpakusitu {
     display: inline-block;
-    padding: 100px 45px 45px 45px;
+    padding: 50px 45px 45px 45px;
     color: #0068b7;
     text-align: center;
     border-radius: 8px;

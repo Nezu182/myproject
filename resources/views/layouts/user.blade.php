@@ -18,6 +18,9 @@
         <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ secure_asset('css/meal_hibetsu.css') }}">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;469;700&display=swap" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
+        
     </head>
     
     <body>
