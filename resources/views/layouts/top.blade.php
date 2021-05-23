@@ -18,9 +18,12 @@
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ secure_asset('css/top.css') }}" rel="stylesheet">
     </head>
-    
     <body>
-        
+    <div id="splash">
+        <div id="splash_text"></div>
+    </div>
+    
+    <div id="container">
      <div class="screen">
          
         <div class="title">
@@ -36,6 +39,12 @@
            <button class="btn-pink btn" type="button" onclick="location.href='/login'">ログイン</button>
          </div>
       </div>
-        
      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"></script>
+    <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+    <script src="js/script.js"></script>
     </body>

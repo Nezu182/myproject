@@ -60,6 +60,8 @@
             </dl>
           </div>
        </div>
+    
+        </div>
        <div class="btn-space">
          <div>
           <button class="btn-pink btn" type="button" onclick="location.href='/user/calendar'">過去の記録</button>
@@ -67,9 +69,8 @@
          <div>
           <button class="btn-pink btn" type="button" onclick="location.href='/user/meal_hibetsu'">編集</button>
          </div>
-      </div>
-       
+       </div>
+      
       </body>
    </div>
 @endsection
-

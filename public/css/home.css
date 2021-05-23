@@ -102,7 +102,7 @@ dd {
 }
 
 .btn-space  {
-    margin-top: 50px;
+    margin: 50px 70px 0 70px;
     display: flex;
     justify-content: space-between;
 }
@@ -133,4 +133,19 @@ dd {
   color: #fff;
   background-color: #00947a;
   border-color: #00947a;
+}
+
+.chart-area{
+  position: relative;
+  width:100%;
+  height:50vh;
+}
+
+.box{
+  max-width:600px;
+  width:100%;
+  margin:100px auto 330px auto;
+  /*padding: 20px;*/
+  background:#fff;
+  text-align: center;
 }
