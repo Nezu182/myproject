@@ -3,22 +3,20 @@
 @section('title', 'Meal Balance')
 
 @section('content')
- <div class="container">
-   <head>
-         
+     <div class="container">
+       <head>
          <link rel="stylesheet" href="{{ secure_asset('css/calendar.css') }}">
          <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;469;700&display=swap" rel="stylesheet">
-         
-   </head>
+       </head>
    
-   <div class="flex-center position-ref full-height">
-       <div class="content">
+       <div class="flex-center position-ref full-height">
+         <div class="content">
            
            <div class="main-title">カレンダー</div>
            
            <div class="day">
                <a href="?ym={{ $prev }}">&lt;</a>
-               <span calss="month">{{ $month }}</span>
+                 <span calss="month">{{ $month }}</span>
                <a href="?ym={{ $next }}">&gt;</a>
            </div>
            
@@ -38,12 +36,12 @@
            </table>
           <div class="btn-space">
             <div>
-               <button class="btn-pink btn" type="button" onclick="location.href='/user/home'">戻る</button>
+              <button class="btn-pink btn" type="button" onclick="location.href='/user/home'">戻る</button>
             </div>
           </div>
-       </div>
+         </div>
        {{-- .content --}}
-   </div>
-   {{-- .flex-center .position-ref .full-height --}}
- </div>
+       </div>
+     {{-- .flex-center .position-ref .full-height --}}
+     </div>
 @endsection
